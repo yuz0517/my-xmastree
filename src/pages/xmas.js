@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate, useNavigate } from "react-router-dom";
 import tree from '../assets/image/tree.png';
-function xmas() {
+function Xmas() {
   
   return (
     <div>
@@ -12,4 +12,4 @@ function xmas() {
   );
 }
 
-export default xmas
+export default Xmas;

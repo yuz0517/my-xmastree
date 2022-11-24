@@ -2,13 +2,13 @@ import React  from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home'
-import xmas from './pages/xmas'
+import Xmas from './pages/Xmas'
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter> 
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path='/xams' element={<xmas />}/>
+        <Route path='/Xmas' element={<Xmas/>}/>
       </Routes>
     </BrowserRouter>
     

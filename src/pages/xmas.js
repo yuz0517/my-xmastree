@@ -7,6 +7,9 @@ import { ReactImageTint } from 'react-image-tint';
 import './Xmas.css';
 //`
 const St_img=styled.img`
+    className='img-tree';
+    alt="tree" src={tree};
+    tintColor = { color}
     //filter: opacity(0.5) drop-shadow(0 0 0, color)
 `;
 function Xmas() {
@@ -18,6 +21,7 @@ function Xmas() {
       <img className='img-tree' alt="tree" src={tree}
               tintColor = { color}
       />
+      <St_img/>
       <ReactImageTint src={tree} color={color} />;
       <SketchPicker 
         color={ color }

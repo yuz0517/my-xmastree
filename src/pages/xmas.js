@@ -5,6 +5,7 @@ import { SketchPicker } from 'react-color'
 import styled from "styled-components";
 import { ReactImageTint } from 'react-image-tint';
 import './Xmas.css';
+import Tree from '../components/Tree';
 //`
 const St_img=styled.img`
     className='img-tree';
@@ -13,19 +14,14 @@ const St_img=styled.img`
     //filter: opacity(0.5) drop-shadow(0 0 0, color)
 `;
 function Xmas() {
-   const [color, setColor] = useState("#409A13");
+  
     
   return (
     <div>
-        <p>sdf</p>
-      <img className='img-tree' alt="tree" src={tree}
-              tintColor = { color}
-      />
-      <St_img/>
-      <ReactImageTint src={tree} color={color} />;
-      <SketchPicker 
-        color={ color }
-        onChangeComplete={ (color) => {setColor(color.hex)} }/>
+        <Tree />
+      
+      
+      
     </div>
 
   );

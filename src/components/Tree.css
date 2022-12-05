@@ -1,0 +1,18 @@
+.div-img-ball1{
+    position: absolute;
+    cursor: move;
+    margin: auto;
+    user-select: none;
+    height: 50px;
+    width: 50px;
+    background-image: url('../assets/image/xball1.png');
+    background-position:center;
+    
+}
+.img-tr{
+    position: absolute;
+    margin: auto;
+    height: 500px;
+    width: 500px;
+
+}

@@ -1,0 +1,10 @@
+.div-img-ball1{
+    left:50%;
+    transform: translate(-50%,0);
+    position: fixed;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    background-size: 28px;
+
+}

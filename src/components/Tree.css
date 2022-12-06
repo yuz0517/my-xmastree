@@ -9,9 +9,31 @@
     background-position:center;
     
 }
-.img-tr{
+.div-tree{
+    /*posision fixed 상태에서 가운데정렬 하는 법. */
     position: fixed;
-    margin: auto;
+    left:50%;
+    transform: translate(-50%,0);
+
+    margin-top: 140px;
+    margin-bottom: 30px;
+    height:600px;
+    width: 400px;
+    background-size: 400px;
+    
+}
+.div-treeSection{
+    border: 1px solid blue;
+    width: 500px;
+    height: 600px;
+}
+.div-decoSection{
+    
+    border: 1px solid blue;
+}
+.img-tr{
+    position:  relative;
+    
     height: 1200px;
     width: 800px;
 

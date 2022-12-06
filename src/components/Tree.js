@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Draggable from "react-draggable";
 //import { ReactImageTint } from "react-image-tint";
 import './Tree.css'
-
+import Deco from './Deco'
 function Tree() {
   const nodeRef = useRef(null);
   const [position, setPosition] = useState({ x:0, y:0 });
@@ -24,20 +24,12 @@ function Tree() {
   return (
     <>
       <img className="img-tree" alt="tree" src={tree} tintcolor={color} />
-      <Draggable
-        nodeRef={nodeRef}
-        onDrag={(e, data) => trackBall1Pos(data)}
-        onStart = {handleStart}
-        onStop  = {handleEnd} >
-        <div ref = {nodeRef}
-             className="div-img-ball1"
-             style={{ backgroundImage: `url(${ball1})` }} > </div>
-      </Draggable>
+      
       <div 
              className="div-img-ball3"
              style={{ backgroundImage: `url(${ball1})` }} />
       
-      
+      <Deco/>
       {/*<SketchPicker
         color={color}
         onChangeComplete={(color) => {

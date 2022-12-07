@@ -16,7 +16,7 @@ const DivBall = styled.div`
   background-size: 28px;
 `;
 export default function Ball1() {
-    const ref = React.createRef()
+  const ref = React.createRef();
   const nodeRef = useRef(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [Opacity, setOpacity] = useState(false);
@@ -30,56 +30,50 @@ export default function Ball1() {
     setPosition({ x: data.x, y: data.y });
   };
 
-  const [List, setList] = useState([
-    {id: 0}
-  ]);
-  const nextId = useRef(0);
-  const onAddClick = useCallback ( () => {
-    /*let array = [...List];
-    let count = array.slice(-1)[0];
-    count += 1;
-    array.push(count);*/
+  const [List, setList] = useState([{ id: 0 }]);
+  const nextId = useRef(1);
+  const onAddClick = useCallback(() => {
     const newball = {
-        id: nextId.current
+      id: nextId.current,
     };
     setList(List.concat(newball));
     nextId.current += 1;
     console.log("List  is", List);
-    //console.log(nextId.current)
-  },[List],
-  );
+  }, [List]);
   const onBallClick = (index) => {
-    console.log("onballclick",index,List,nodeRef)
-
-  }
-  const onRemoveClick = (index) => {
-    console.log("Ball1 doubleclick is ", index);
-    /*const updateList  = List.filter((List) => List.index !== index);
-    setList(updateList);*/
-    setList(List.filter((List) => List !== (index-3)));
-    console.log(List);
+    console.log("onballclick", index, List, nodeRef);
   };
+  const onRemoveClick = useCallback(
+    (id) => {
+      console.log("Ball1 doubleclick is ", id);
+      /*const updateList  = List.filter((List) => List.index !== index);
+    setList(updateList);*/
+      setList(List.filter((newball) => newball.id !== id));
+      console.log(List);
+    },
+    [List]
+  );
 
   return (
     <div>
       {List &&
-        List.map((item, index) => (
+        List.map((item) => (
           <Draggable
-            key={index}
+            key={item.id}
             ref={nodeRef}
             onDrag={(e, data) => trackBall1Pos(data)}
             onStart={handleStart}
             onStop={handleEnd}
           >
             <DivBall
-              key={index}
+              key={item.id}
               ref={nodeRef}
-              onClick={() => onBallClick(item)}
+              onClick={() => onBallClick(item.id)}
               //className={`div-img-ball${index}`}
-              onDoubleClick={() => onRemoveClick(item)}
+              onDoubleClick={() => onRemoveClick(item.id)}
               style={{ backgroundImage: `url(${ball1})` }}
             >
-              {" "}
+              ${item.id}
             </DivBall>
           </Draggable>
         ))}

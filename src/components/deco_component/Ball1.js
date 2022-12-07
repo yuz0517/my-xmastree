@@ -17,6 +17,7 @@ const DivBall = styled.div`
 `;
 export default function Ball1() {
   const ref = React.createRef();
+  //Draggable 관련 변수, 함수들
   const nodeRef = useRef(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [Opacity, setOpacity] = useState(false);

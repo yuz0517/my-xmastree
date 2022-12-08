@@ -11,7 +11,7 @@ const DivBall = styled.div`
   transform: translate(-50%, 0);
   position: fixed;
   margin: auto;
-  width: 30px;
+  width: 27.5px;
   height: 30px;
   background-size: 28px;
 `;
@@ -57,6 +57,7 @@ export default function Ball1() {
 
   return (
     <div>
+      
       {List &&
         List.map((item) => (
           <Draggable
@@ -74,24 +75,10 @@ export default function Ball1() {
               onDoubleClick={() => onRemoveClick(item.id)}
               style={{ backgroundImage: `url(${ball1})` }}
             >
-              ${item.id}
+              
             </DivBall>
           </Draggable>
         ))}
-      {/*<Draggable
-        nodeRef={nodeRef}
-        onDrag={(e, data) => trackBall1Pos(data)}
-        onStart={handleStart}
-        onStop={handleEnd}
-      >
-        <div
-          ref={nodeRef}
-          className="div-img-ball1"
-          style={{ backgroundImage: `url(${ball1})` }}
-        >
-          {" "}
-        </div>
-        </Draggable>*/}
 
       <button onClick={onAddClick}>+</button>
     </div>

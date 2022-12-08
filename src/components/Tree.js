@@ -8,18 +8,7 @@ import Draggable from "react-draggable";
 import "./Tree.css";
 import Deco from "./Deco";
 function Tree() {
-  const nodeRef = useRef(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [Opacity, setOpacity] = useState(false);
-  const handleStart = () => {
-    setOpacity(true);
-  };
-  const handleEnd = () => {
-    setOpacity(false);
-  };
-  const trackBall1Pos = (data) => {
-    setPosition({ x: data.x, y: data.y });
-  };
+  
   const [color, setColor] = useState("#409A13");
   return (
     <>

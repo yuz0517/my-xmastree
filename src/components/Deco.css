@@ -1,0 +1,6 @@
+.div-deco-full{
+    display: flex;
+  justify-content: space-between;
+  
+  margin: 3px;
+}

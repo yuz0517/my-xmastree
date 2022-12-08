@@ -1,3 +1,7 @@
+.div-treepage-full{
+    display: flex;
+  justify-content: space-between;
+}
 .div-img-ball1{
     position: absolute;
     cursor: move;
@@ -28,7 +32,8 @@
     height: 600px;
 }
 .div-decoSection{
-    
+    width: 200px;
+    height: 90px;
     border: 1px solid blue;
 }
 .img-tr{

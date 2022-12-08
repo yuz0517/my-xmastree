@@ -4,8 +4,8 @@ import { SketchPicker } from "react-color";
 import styled from "styled-components";
 import Draggable from "react-draggable";
 import CreateBall1 from "./CreateBall1";
-import "./Ball1.css";
-
+import './Ball1.css';
+import { IoIosAddCircle } from 'react-icons/io';
 const DivBall = styled.div`
   left: 50%;
   transform: translate(-50%, 0);
@@ -14,6 +14,21 @@ const DivBall = styled.div`
   width: 27.5px;
   height: 30px;
   background-size: 28px;
+`;
+const DivExampleBall = styled.div`
+
+  margin: auto;
+  width: 27.5px;
+  height: 30px;
+  background-size: 28px;
+`;
+const DivDeco = styled.div`
+  margin-top:10px;
+  text-align: center;
+  width: 40px;
+  height: 70px;
+  border: 1px solid blue;
+  
 `;
 export default function Ball1() {
   const ref = React.createRef();
@@ -31,8 +46,8 @@ export default function Ball1() {
     setPosition({ x: data.x, y: data.y });
   };
 
-  const [List, setList] = useState([{ id: 0 }]);
-  const nextId = useRef(1);
+  const [List, setList] = useState([]); //빈 배열 선언. 화면에 빈 화면만 보여주기 위함.
+  const nextId = useRef(0);
   const onAddClick = useCallback(() => {
     const newball = {
       id: nextId.current,
@@ -57,7 +72,13 @@ export default function Ball1() {
 
   return (
     <div>
-      
+      <DivDeco>
+        <DivExampleBall style={{ backgroundImage: `url(${ball1})` }}></DivExampleBall>
+
+        <button className='AddButton' onClick={onAddClick}>
+            <IoIosAddCircle/>
+        </button>
+      </DivDeco>
       {List &&
         List.map((item) => (
           <Draggable
@@ -74,13 +95,9 @@ export default function Ball1() {
               //className={`div-img-ball${index}`}
               onDoubleClick={() => onRemoveClick(item.id)}
               style={{ backgroundImage: `url(${ball1})` }}
-            >
-              
-            </DivBall>
+            ></DivBall>
           </Draggable>
         ))}
-
-      <button onClick={onAddClick}>+</button>
     </div>
   );
 }

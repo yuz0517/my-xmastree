@@ -1,10 +1,10 @@
-.div-img-ball1{
-    left:50%;
-    transform: translate(-50%,0);
-    position: fixed;
-    margin: auto;
-    width: 30px;
-    height: 30px;
-    background-size: 28px;
+ .AddButton{
 
-}
+ background: none;
+    outline: none;
+        border: none;
+        font-size: 1.6rem;
+        
+        margin-top: 0.5rem;
+
+ }

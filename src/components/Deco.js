@@ -11,7 +11,7 @@ function Deco() {
   return (
     <div className="div-deco-full">
       
-      <YellowNeon />
+      <YellowNeon yellowneon={yellowneon}/>
       <Ball1/> {/* yellowneon이 맨 밑에 있어야 ball1이 제대로 작동함. */}
         
       

@@ -17,12 +17,13 @@ width: 40px;
 height: 70px;
 border: 1px solid blue;
 `;
-export default function YellowNeon() {
+export default function YellowNeon({yellowneon}) {
 
 
   const [visible, setVisible] = useState(false);
     console.log(visible);
     const onclicktest = useCallback(()=> {
+        yellowneon("yellowneon");
         console.log(visible)
       },[visible]);
     

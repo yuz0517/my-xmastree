@@ -1,3 +1,16 @@
+.div-yellowneon{
+    /*posision fixed 상태에서 가운데정렬 하는 법. */
+    position: fixed;
+    left:50%;
+    transform: translate(-50%,0);
+
+    margin-top: 50px;
+    margin-bottom: 30px;
+    height:600px;
+    width: 400px;
+    background-size: 400px;
+    
+}
 .div-treepage-full{
     display: flex;
   justify-content: space-between;

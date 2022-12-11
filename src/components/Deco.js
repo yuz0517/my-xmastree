@@ -6,8 +6,9 @@ import Draggable from "react-draggable";
 import "./Deco.css";
 import Ball1 from './deco_component/Ball1'
 import YellowNeon from "./deco_component/YellowNeon";
-function Deco() {
+function Deco({yellowneon, getYellowneon}) {
 
+  
   return (
     <div className="div-deco-full">
       

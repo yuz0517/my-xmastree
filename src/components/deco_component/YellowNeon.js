@@ -17,15 +17,16 @@ width: 40px;
 height: 70px;
 border: 1px solid blue;
 `;
-export default function YellowNeon({yellowneon}) {
+const YellowNeon = ({ yellowneon, getYellowneon }) => {
 
 
   const [visible, setVisible] = useState(false);
-    console.log(visible);
-    const onclicktest = useCallback(()=> {
-        yellowneon("yellowneon");
-        console.log(visible)
-      },[visible]);
+  //const [yellowneon, setYellowneon] = useState(false)
+    const onclicktest = () => {
+        console.log(yellowneon)
+        getYellowneon(yellowneon);
+       
+      };
     
   return (
     <div>
@@ -48,13 +49,9 @@ export default function YellowNeon({yellowneon}) {
         className="div-yellowneon"
 
       />
-      <div
-        className="div-yellowneon"
-        style={{
-          backgroundImage: `url(${yellowneon})`,
-          display: visible ? "block" : "none"
-        }}
-      />
+      
     </div>
   );
 }
+
+export default YellowNeon;

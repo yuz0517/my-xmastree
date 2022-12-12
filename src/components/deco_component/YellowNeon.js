@@ -23,8 +23,11 @@ const YellowNeon = ({ yellowneon, getYellowneon }) => {
   const [visible, setVisible] = useState(false);
   //const [yellowneon, setYellowneon] = useState(false)
     const onclicktest = () => {
-        console.log(yellowneon)
-        getYellowneon(yellowneon);
+        console.log(visible)
+        setVisible(!visible)
+        yellowneon = visible; 
+
+        //getYellowneon(visible);
        
       };
     
@@ -37,10 +40,7 @@ const YellowNeon = ({ yellowneon, getYellowneon }) => {
 
         <button
           className="AddButton"
-          onClick={() => {onclicktest();
-            setVisible((visible)=>!visible)
-            
-          }} 
+          onClick={onclicktest} 
         >
           <IoIosAddCircle />
         </button>

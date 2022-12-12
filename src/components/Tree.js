@@ -8,7 +8,7 @@ import "./Tree.css";
 import Deco from "./Deco";
 import Deco1 from "./Deco1";
 import html2canvas from "html2canvas";
-function Tree() {
+const Tree = () => {
   //console.log(yellowneon);
   const [color, setColor] = useState("#409A13");
   const onCaptureClick = () => {

@@ -8,15 +8,31 @@ import "./Tree.css";
 import Deco from "./Deco";
 import Deco1 from "./Deco1";
 import html2canvas from "html2canvas";
+import styled from "styled-components";
+const DivTreeSection = styled.div`
+
+border: 1px solid blue;
+position: fixed;
+left: 50%;
+padding-left: 30px;
+margin-top: 80px;
+margin-bottom: 30px;
+
+width: 400px;
+height: 600px;
+transform: translate(-50%,0);
+
+
+`;
 const Tree = () => {
-  //console.log(yellowneon);
+  
   const [color, setColor] = useState("#409A13");
   const onCaptureClick = () => {
-    const capture = document.getElementById("div-treeSection");
-    capture.style.width = "300px";
-    capture.style.height = "700px";
+    const capture = document.getElementById("treeSection");
+    //capture.style.width = "600px";
+    //capture.style.height = "700px";
 
-    //capture.style.paddingLeft='50px'
+    //capture.style.paddingLeft='400px'
     //capture.style.paddingRight='40px'
 
     html2canvas(capture).then((canvas) => {
@@ -24,7 +40,7 @@ const Tree = () => {
     });
   };
   const saveAs = (uri, filename) => {
-    let link = document.createElement("a");
+    var link = document.createElement("a");
     if (typeof link.download === "string") {
       link.href = uri;
       link.download = filename;
@@ -35,6 +51,8 @@ const Tree = () => {
       window.open(uri);
     }
   };
+  //--Ball1------------//
+
 
   //---yellowneon------//
   const [yellowneon, setYellowneon] = useState(false);
@@ -46,19 +64,14 @@ const Tree = () => {
   };
   return (
     <div className="div-treepage-full">
-      <div className="div-treeSection" id="div-treeSections">
+      <DivTreeSection id="treeSection">
       
-        <div className="div-tree" style={{ backgroundImage: `url(${tree})` }} />
-        <div
-        className="div-yellowneon"
-        style={{
-          backgroundImage: `url(${yellowneon_img})`,
-          display: yellowneon ? "block" : "none"
-        }}
-      />
-      </div>
+        <div className="div-tree" style={{ backgroundImage: `url(${tree})` }}  />
+        <div className="div-yellowneon" style={{backgroundImage: `url(${yellowneon_img})`,display: yellowneon ? "block" : "none"}}/>
+      
+      </DivTreeSection>
 
-      <div className="div-decoSection" id="div-treeSection">
+      <div className="div-decoSection">
         <Deco  yellowneon={yellowneon} getYellowneon={getYellowneon}/>
         <Deco1 />
       </div>
@@ -76,3 +89,4 @@ const Tree = () => {
   );
 }
 export default Tree;
+export {DivTreeSection}

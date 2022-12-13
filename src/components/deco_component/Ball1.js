@@ -6,6 +6,7 @@ import Draggable from "react-draggable";
 import CreateBall1 from "./CreateBall1";
 import './Ball1.css';
 import { IoIosAddCircle } from 'react-icons/io';
+import { DivTreeSection } from "../Tree";
 const DivBall = styled.div`
   left: 50%;
   transform: translate(-50%, 0);
@@ -79,6 +80,7 @@ export default function Ball1() {
             <IoIosAddCircle/>
         </button>
       </DivDeco>
+      <DivTreeSection>
       {List &&
         List.map((item) => (
           <Draggable
@@ -98,6 +100,7 @@ export default function Ball1() {
             ></DivBall>
           </Draggable>
         ))}
+        </DivTreeSection>
     </div>
   );
 }

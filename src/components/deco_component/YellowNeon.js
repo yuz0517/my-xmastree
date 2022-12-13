@@ -25,9 +25,9 @@ const YellowNeon = ({ yellowneon, getYellowneon }) => {
     const onclicktest = () => {
         console.log(visible)
         setVisible(!visible)
-        yellowneon = visible; 
+        //yellowneon = visible; 
 
-        //getYellowneon(visible);
+        getYellowneon(!yellowneon);
        
       };
     

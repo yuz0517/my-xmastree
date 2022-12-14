@@ -7,14 +7,16 @@ import yellowneon_img from "../img/yellowneon.png";
 import "./Tree.css";
 import Deco from "./Deco";
 import Deco1 from "./Deco1";
+import Ball1 from "./deco_component/Ball1";
 import html2canvas from "html2canvas";
 import styled from "styled-components";
+import Ball1_list from "./deco_component/Ball1_list";
 const DivTreeSection = styled.div`
 
 border: 1px solid blue;
 position: fixed;
 left: 50%;
-padding-left: 30px;
+
 margin-top: 80px;
 margin-bottom: 30px;
 
@@ -51,11 +53,18 @@ const Tree = () => {
       window.open(uri);
     }
   };
-  //--Ball1------------//
-
+  //---Ball1------------//
+  const [List, setList] = useState([]);
+    const nextId = useRef(0);
+  const getList = (List) => {
+    console.log("Tree.js befroe ,",List)
+    setList(List);
+    console.log("Tree.js getList()", List)
+  };
 
   //---yellowneon------//
   const [yellowneon, setYellowneon] = useState(false);
+
   const getYellowneon = (yellowneon) => {
     console.log(yellowneon);
     setYellowneon(yellowneon);
@@ -65,14 +74,15 @@ const Tree = () => {
   return (
     <div className="div-treepage-full">
       <DivTreeSection id="treeSection">
-      
+         
         <div className="div-tree" style={{ backgroundImage: `url(${tree})` }}  />
         <div className="div-yellowneon" style={{backgroundImage: `url(${yellowneon_img})`,display: yellowneon ? "block" : "none"}}/>
-      
+        <Ball1_list List={List} getList={getList} ></Ball1_list>
       </DivTreeSection>
-
+      
       <div className="div-decoSection">
-        <Deco  yellowneon={yellowneon} getYellowneon={getYellowneon}/>
+        <Deco  yellowneon={yellowneon} getYellowneon={getYellowneon} nextId={nextId}
+               List={List} getList={getList}/>
         <Deco1 />
       </div>
       

@@ -6,14 +6,14 @@ import Draggable from "react-draggable";
 import "./Deco.css";
 import Ball1 from './deco_component/Ball1'
 import YellowNeon from "./deco_component/YellowNeon";
-function Deco({yellowneon, getYellowneon}) {
+function Deco({yellowneon, getYellowneon,List,getList}) {
 
   
   return (
     <div className="div-deco-full">
       
       <YellowNeon yellowneon={yellowneon} getYellowneon={getYellowneon}/>
-      <Ball1/> {/* yellowneon이 맨 밑에 있어야 ball1이 제대로 작동함. */}
+      <Ball1 List={List} getList={getList}/> {/* yellowneon이 맨 밑에 있어야 ball1이 제대로 작동함. */}
         
       
     </div>

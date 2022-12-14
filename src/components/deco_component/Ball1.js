@@ -31,7 +31,7 @@ const DivDeco = styled.div`
   border: 1px solid blue;
   
 `;
-export default function Ball1() {
+const Ball1 = ({ List, getList}) => {
   const ref = React.createRef();
   //Draggable 관련 변수, 함수들
   const nodeRef = useRef(null);
@@ -46,30 +46,26 @@ export default function Ball1() {
   const trackBall1Pos = (data) => {
     setPosition({ x: data.x, y: data.y });
   };
-
-  const [List, setList] = useState([]); //빈 배열 선언. 화면에 빈 화면만 보여주기 위함.
+  
+  const [BList, setList] = useState([]); //빈 배열 선언. 화면에 빈 화면만 보여주기 위함.
   const nextId = useRef(0);
-  const onAddClick = useCallback(() => {
+  
+  //console.log("Ball1.js",nextId.current)
+  const onAddClick =() => {
+    console.log("넘어온 List는",List)
+    setList(List);
+    console.log(nextId.current);
     const newball = {
       id: nextId.current,
     };
-    setList(List.concat(newball));
+    console.log("create ", newball.id,List)
+    setList(BList.concat(newball));
+    console.log("after create", List)
     nextId.current += 1;
-    console.log("List  is", List);
-  }, [List]);
-  const onBallClick = (index) => {
-    console.log("onballclick", index, List, nodeRef);
+    //console.log("Ball1.js, List  is", List);
+    getList(BList);//Tree.js로 보낸다. 
   };
-  const onRemoveClick = useCallback(
-    (id) => {
-      console.log("Ball1 doubleclick is ", id);
-      /*const updateList  = List.filter((List) => List.index !== index);
-    setList(updateList);*/
-      setList(List.filter((newball) => newball.id !== id));
-      console.log(List);
-    },
-    [List]
-  );
+ 
 
   return (
     <div>
@@ -80,27 +76,9 @@ export default function Ball1() {
             <IoIosAddCircle/>
         </button>
       </DivDeco>
-      <DivTreeSection>
-      {List &&
-        List.map((item) => (
-          <Draggable
-            key={item.id}
-            ref={nodeRef}
-            onDrag={(e, data) => trackBall1Pos(data)}
-            onStart={handleStart}
-            onStop={handleEnd}
-          >
-            <DivBall
-              key={item.id}
-              ref={nodeRef}
-              onClick={() => onBallClick(item.id)}
-              //className={`div-img-ball${index}`}
-              onDoubleClick={() => onRemoveClick(item.id)}
-              style={{ backgroundImage: `url(${ball1})` }}
-            ></DivBall>
-          </Draggable>
-        ))}
-        </DivTreeSection>
+      
     </div>
   );
 }
+
+export default Ball1;

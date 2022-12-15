@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useContext, useState, useRef, useCallback } from "react";
 import ball1 from "../../assets/image/xball1.png";
 import { SketchPicker } from "react-color";
 import styled from "styled-components";
@@ -7,6 +7,7 @@ import CreateBall1 from "./CreateBall1";
 import './Ball1.css';
 import { IoIosAddCircle } from 'react-icons/io';
 import { DivTreeSection } from "../Tree";
+import { Context } from '../Contextprovider';
 const DivBall = styled.div`
   left: 50%;
   transform: translate(-50%, 0);
@@ -49,22 +50,24 @@ const Ball1 = ({ List, getList}) => {
   
   const [BList, setList] = useState([]); //빈 배열 선언. 화면에 빈 화면만 보여주기 위함.
   const nextId = useRef(0);
-  
+  const { Ball1List, setBall1List } = useContext(Context);
   //console.log("Ball1.js",nextId.current)
-  const onAddClick =() => {
-    console.log("넘어온 List는",List)
-    setList(List);
+  const onAddClick = useCallback(() => {
+    //console.log("넘어온 List는",List)
+    //setBall1List(List);
     console.log(nextId.current);
     const newball = {
       id: nextId.current,
     };
-    console.log("create ", newball.id,List)
-    setList(BList.concat(newball));
-    console.log("after create", List)
+    console.log("create ", newball.id)
+    setBall1List(Ball1List.concat(newball));
+    //console.log("after create", List)
     nextId.current += 1;
     //console.log("Ball1.js, List  is", List);
-    getList(BList);//Tree.js로 보낸다. 
-  };
+    //getList(BList);//Tree.js로 보낸다. 
+  },[Ball1List]
+
+  );
  
 
   return (

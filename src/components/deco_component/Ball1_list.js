@@ -1,9 +1,11 @@
-import { useState, useRef, useCallback } from "react";
+import { useContext, useState, useRef, useCallback } from "react";
 import ball1 from "../../assets/image/xball1.png";
 import React from "react";
 import { DivTreeSection } from "../Tree";
 import styled from "styled-components";
 import Draggable from "react-draggable";
+import { Context } from "../Contextprovider";
+
 const DivBall = styled.div`
 
 
@@ -16,6 +18,7 @@ const DivBall = styled.div`
 const Ball1_list = ({ List,getList, nextId }) => {
   //Draggable 관련 변수, 함수들
 
+  const { Ball1List, setBall1List } = useContext(Context);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [Opacity, setOpacity] = useState(false);
   const handleStart = () => {
@@ -28,30 +31,29 @@ const Ball1_list = ({ List,getList, nextId }) => {
     setPosition({ x: data.x, y: data.y });
   };
 
-  const newball = {
-    id: ''
-  };
+  const [BList, setList] = useState([]);  
   const onBallClick = (index) => {
     console.log("Ball1_List.js: onballclick", index, List);
+    //console.log(BList)
   };
-  const [BList, setList] = useState([]); 
+
   const onRemoveClick = useCallback(
     (id) => {
       setList(List)
-      console.log("넘어온 리시트는",List);
-      console.log("Ball1 doubleclick is ", id,List);
+      //console.log("넘어온 리시트는",List);
+      console.log("Ball1 doubleclick is ", id,Ball1List);
       /*const updateList  = List.filter((List) => List.index !== index);
-    setList(updateList);*/
-      setList(BList.filter((newball) => newball.id !== id));
-      console.log("this is deletelist",List);
+      setList(updateList);*/
+      setBall1List(Ball1List.filter((newball) => newball.id !== id));
+      
       getList(BList);
-    },[List]
+    },[Ball1List]
   );
   return (
     <>
       
-        {List &&
-          List.map((item) => (
+        {Ball1List &&
+          Ball1List.map((item) => (
             <Draggable
               key={item.id}
               ref={nextId}

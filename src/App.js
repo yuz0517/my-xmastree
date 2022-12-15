@@ -1,16 +1,20 @@
-import React  from 'react';
+import React, { useState } from 'react';
 import { Routes, Route, BrowserRouter, HashRouter} from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home'
 import Xmas from './pages/Xmas'
+import { Context } from './components/Contextprovider'
 
 function App() {
+  const [Ball1List, setBall1List] = useState([]);
   return (
     <HashRouter > 
+      <Context.Provider value={{ Ball1List, setBall1List }}>
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/Xmas' element={<Xmas/>}/>
       </Routes>
+      </Context.Provider>
     </HashRouter>
     
   );

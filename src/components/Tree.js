@@ -1,28 +1,28 @@
 import React, { useState, useRef } from "react";
+import html2canvas from "html2canvas";
+
 import tree from "../img/xmastree.png";
+import yellowneon_img from "../img/yellowneon.png";
 import ball1 from "../img/xball1.png";
 import { SketchPicker } from "react-color";
-import yellowneon_img from "../img/yellowneon.png";
+
 //import { ReactImageTint } from "react-image-tint";
 import "./Tree.css";
 import Deco from "./Deco";
 import Deco1 from "./Deco1";
-import Ball1 from "./deco_component/Ball1";
-import html2canvas from "html2canvas";
+
 import styled from "styled-components";
 import Ball1_list from "./deco_component/Ball1_list";
+import Ball2_list from "./deco_component/Ball2_list";
+import Ball3_list from "./deco_component/Ball3_list";
 const DivTreeSection = styled.div`
 
 border: 1px solid blue;
-position: fixed;
-left: 50%;
-
 margin-top: 80px;
 margin-bottom: 30px;
-
-width: 400px;
+width: 350px;
 height: 600px;
-transform: translate(-50%,0);
+
 
 
 `;
@@ -78,6 +78,8 @@ const Tree = () => {
         <div className="div-tree" style={{ backgroundImage: `url(${tree})` }}  />
         <div className="div-yellowneon" style={{backgroundImage: `url(${yellowneon_img})`,display: yellowneon ? "block" : "none"}}/>
         <Ball1_list List={List} getList={getList} ></Ball1_list>
+        <Ball2_list />
+        <Ball3_list/>
       </DivTreeSection>
       
       <div className="div-decoSection">

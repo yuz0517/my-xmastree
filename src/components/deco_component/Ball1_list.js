@@ -15,7 +15,7 @@ const DivBall = styled.div`
   height: 30px;
   background-size: 28px;
 `;
-const Ball1_list = ({ List,getList, nextId }) => {
+const Ball1_list = ({ nextId }) => {
   //Draggable 관련 변수, 함수들
 
   const { Ball1List, setBall1List } = useContext(Context);
@@ -33,20 +33,20 @@ const Ball1_list = ({ List,getList, nextId }) => {
 
   const [BList, setList] = useState([]);  
   const onBallClick = (index) => {
-    console.log("Ball1_List.js: onballclick", index, List);
+    console.log("Ball1_List.js: onballclick", index);
     //console.log(BList)
   };
 
   const onRemoveClick = useCallback(
     (id) => {
-      setList(List)
+      
       //console.log("넘어온 리시트는",List);
       console.log("Ball1 doubleclick is ", id,Ball1List);
       /*const updateList  = List.filter((List) => List.index !== index);
       setList(updateList);*/
       setBall1List(Ball1List.filter((newball) => newball.id !== id));
       
-      getList(BList);
+      
     },[Ball1List]
   );
   return (

@@ -11,6 +11,19 @@
     
     
 }
+.div-redneon{
+    /*posision fixed 상태에서 가운데정렬 하는 법. */
+    position: fixed;
+ 
+
+    margin-top: 80px;
+    margin-bottom: 30px;
+    height:600px;
+    width: 400px;
+    background-size: 400px;
+    
+    
+}
 .div-treepage-full{
     display: flex;
   justify-content: space-between;
@@ -47,6 +60,22 @@
     width: 200px;
     height: 90px;
     border: 1px solid blue;
+}
+
+.btn-download{
+    background-color: #f44336; /* Red */
+    border-radius: 1rem;
+    width: 100px;
+    height: 50px;
+
+    color: aliceblue;
+    font-size: 1.2rem;
+}
+.btn-download:hover:before{
+    content: "download";
+}
+.btn-download:hover{
+    content: "🧑‍🎄❄️☃️🎅 M e r r y X m a s";
 }
 .img-tr{
     position:  relative;

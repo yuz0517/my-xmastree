@@ -3,6 +3,7 @@ import html2canvas from "html2canvas";
 
 import tree from "../img/xmastree.png";
 import yellowneon_img from "../img/yellowneon.png";
+import redneon_img from "../img/redneon.png"
 import ball1 from "../img/xball1.png";
 import { SketchPicker } from "react-color";
 
@@ -68,8 +69,13 @@ const Tree = () => {
   const getYellowneon = (yellowneon) => {
     console.log(yellowneon);
     setYellowneon(yellowneon);
-    //console.log("state" ,state_yellowneon)
+  };
+  //----Redneon-----//
+  const[redneon,  setRedneon] = useState(false);
+
+  const getRedneon = (Redneon) => {
     
+    setRedneon(Redneon);
   };
   return (
     <div className="div-treepage-full">
@@ -77,13 +83,16 @@ const Tree = () => {
          
         <div className="div-tree" style={{ backgroundImage: `url(${tree})` }}  />
         <div className="div-yellowneon" style={{backgroundImage: `url(${yellowneon_img})`,display: yellowneon ? "block" : "none"}}/>
-        <Ball1_list List={List} getList={getList} ></Ball1_list>
+        
+        <div className="div-redneon" style={{backgroundImage: `url(${redneon_img})`,display: redneon ? "block" : "none"}}/>
+        <Ball1_list />
         <Ball2_list />
         <Ball3_list/>
       </DivTreeSection>
       
       <div className="div-decoSection">
-        <Deco  yellowneon={yellowneon} getYellowneon={getYellowneon} nextId={nextId}
+        <Deco  yellowneon={yellowneon} getYellowneon={getYellowneon} 
+               redneon={redneon} getRedneon = {getRedneon} nextId={nextId}
                List={List} getList={getList}/>
         <Deco1 />
       </div>
@@ -95,7 +104,8 @@ const Tree = () => {
         }}
       />*/}
       <div>
-        <button onClick={onCaptureClick}>click</button>
+        <button onClick={onCaptureClick}
+                className='btn-download'/>
       </div>
     </div>
   );

@@ -64,17 +64,17 @@
 
 .btn-download{
     background-color: #f44336; /* Red */
-    border-radius: 1rem;
+    border-radius: 2rem;
     width: 100px;
     height: 50px;
 
     color: aliceblue;
-    font-size: 1.2rem;
+    font-size: 0.7rem;
 }
-.btn-download:hover:before{
+.btn-download::before{
     content: "download";
 }
-.btn-download:hover{
+.btn-download:hover::before{
     content: "🧑‍🎄❄️☃️🎅 M e r r y X m a s";
 }
 .img-tr{

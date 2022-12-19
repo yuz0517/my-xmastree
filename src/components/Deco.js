@@ -11,7 +11,6 @@ import RedNeon from "./deco_component/RedNeon";
 import YellowNeon from "./deco_component/YellowNeon";
 function Deco({yellowneon, getYellowneon, 
                Redneon, getRedneon}) {
-
   
   return (
     <div className="div-deco-full">
@@ -21,9 +20,8 @@ function Deco({yellowneon, getYellowneon,
       <Ball1/> {/* yellowneon이 맨 밑에 있어야 ball1이 제대로 작동함. */}
       <Ball2/>
       <Ball3/>
-      
     </div>
   );
-}
+  }
 
 export default Deco;

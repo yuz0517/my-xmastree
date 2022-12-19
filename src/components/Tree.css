@@ -63,19 +63,23 @@
 }
 
 .btn-download{
-    background-color: #f44336; /* Red */
-    border-radius: 2rem;
-    width: 100px;
-    height: 50px;
+    background-color: #f84c97; /* Red */
+    border-radius: 4rem;
+    width: 80px;
+    height: 100px;
+    border: 3px solid #3cff00;
 
     color: aliceblue;
     font-size: 0.7rem;
+    margin-right: 30px;
+    margin-top: 20px;
 }
 .btn-download::before{
     content: "download";
 }
 .btn-download:hover::before{
     content: "🧑‍🎄❄️☃️🎅 M e r r y X m a s";
+    font-style:italic;
 }
 .img-tr{
     position:  relative;

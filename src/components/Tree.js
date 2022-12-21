@@ -13,9 +13,11 @@ import Deco from "./Deco";
 import Deco1 from "./Deco1";
 
 import styled from "styled-components";
+
 import Ball1_list from "./deco_component/Ball1_list";
 import Ball2_list from "./deco_component/Ball2_list";
 import Ball3_list from "./deco_component/Ball3_list";
+import Candy1_list from "./deco_component/Candy1_list";
 const DivTreeSection = styled.div`
 
 border: 1px solid blue;
@@ -88,6 +90,7 @@ const Tree = () => {
         <Ball1_list />
         <Ball2_list />
         <Ball3_list/>
+        <Candy1_list/>
       </DivTreeSection>
       
       <div className="div-decoSection">

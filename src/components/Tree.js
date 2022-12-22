@@ -12,6 +12,7 @@ import "./Tree.css";
 import Deco from "./Deco";
 import Deco1 from "./Deco1";
 
+import { BiQuestionMark } from "react-icons/bi"
 import styled from "styled-components";
 
 import Ball1_list from "./deco_component/Ball1_list";
@@ -99,7 +100,7 @@ const Tree = () => {
                List={List} getList={getList}/>
         <Deco1 />
       </div>
-      
+      <BiQuestionMark className="icon-qmark"/>
       {/*<SketchPicker
         color={color}
         onChangeComplete={(color) => {

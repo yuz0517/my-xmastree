@@ -60,6 +60,7 @@
     width: 200px;
     height: 90px;
     border: 1px solid blue;
+    overflow: auto;
 }
 
 .btn-download{

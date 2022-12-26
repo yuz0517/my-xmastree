@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import html2canvas from "html2canvas";
-
+import Snowfall from 'react-snowfall'
 import tree from "../img/xmastree.png";
 import yellowneon_img from "../img/yellowneon.png";
 import redneon_img from "../img/redneon.png";
@@ -15,10 +15,11 @@ import Deco1 from "./Deco1";
 import { BiQuestionMark } from "react-icons/bi";
 import styled from "styled-components";
 import { Tooltip } from "react-tooltip";
-import 'react-tooltip/dist/react-tooltip.css'
+import "react-tooltip/dist/react-tooltip.css";
 import Ball1_list from "./deco_component/Ball1_list";
 import Ball2_list from "./deco_component/Ball2_list";
 import Ball3_list from "./deco_component/Ball3_list";
+import Ball4_list from "./deco_component/Ball4_list";
 import Candy1_list from "./deco_component/Candy1_list";
 const DivTreeSection = styled.div`
   border: 1px solid blue;
@@ -31,12 +32,6 @@ const Tree = () => {
   const [color, setColor] = useState("#409A13");
   const onCaptureClick = () => {
     const capture = document.getElementById("treeSection");
-    //capture.style.width = "600px";
-    //capture.style.height = "700px";
-
-    //capture.style.paddingLeft='400px'
-    //capture.style.paddingRight='40px'
-
     html2canvas(capture).then((canvas) => {
       saveAs(canvas.toDataURL("image/jpg"), "Tree.jpg");
     });
@@ -94,10 +89,8 @@ const Tree = () => {
             display: redneon ? "block" : "none",
           }}
         />
-        <Ball1_list />
-        <Ball2_list />
-        <Ball3_list />
-        <Candy1_list />
+        <Ball1_list /><Ball2_list /><Ball3_list /><Candy1_list />
+        <Ball4_list />
       </DivTreeSection>
 
       <div className="div-decoSection">
@@ -112,19 +105,34 @@ const Tree = () => {
         />
         <Deco1 />
       </div>
+      <div> <Snowfall/></div>
       <div>
-        <BiQuestionMark className="icon-qmark" />
         {/*<SketchPicker
         color={color}
         onChangeComplete={(color) => {
           setColor(color.hex);
         }}
       />*/}
-        <p id="p-snowman" className="p-snowman"
-           data-tooltip-content="Make your own X-mas Tree!<br />Drag your favorite decorations and place them on the Tree"
-           >☃️</p>
-        <Tooltip anchorId="p-snowman" place="top" type="error"/>
+        <p
+          id="tooltip-snowman"
+          className="p-snowman"
+          data-tooltip-html="Make your own X-mas Tree!<br />Drag your favorite decorations and place them on the Tree"
+        >
+          ☃️
+        </p>
+        <Tooltip anchorId="tooltip-snowman" place="top" />
       </div>
+      <div>
+        <p
+          id="tooltip-santa"
+          className="p-santa"
+          data-tooltip-html="Add the decoration and DoubleClick to delete it "
+        >
+          ❄️
+        </p>
+        <Tooltip anchorId="tooltip-santa" place="top" />
+      </div>
+
       <div>
         <button onClick={onCaptureClick} className="btn-download" />
       </div>

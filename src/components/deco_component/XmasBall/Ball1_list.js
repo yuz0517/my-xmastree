@@ -1,10 +1,10 @@
 import { useContext, useState, useRef, useCallback } from "react";
-import ball4 from "../../assets/image/xball4.png";
+import ball1 from "../../../assets/image/xball1.png";
 import React from "react";
-import { DivTreeSection } from "../Tree";
+import { DivTreeSection } from "../../Tree";
 import styled from "styled-components";
 import Draggable from "react-draggable";
-import { Context } from "../Contextprovider";
+import { Context } from "../../Contextprovider"
 
 const DivBall = styled.div`
 
@@ -15,10 +15,10 @@ const DivBall = styled.div`
   height: 30px;
   background-size: 28px;
 `;
-const Ball4_list = ({  }) => {
+const Ball1_list = ({ nextId }) => {
   //Draggable 관련 변수, 함수들
 
-  const { Ball4List, setBall4List } = useContext(Context);
+  const { Ball1List, setBall1List } = useContext(Context);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [Opacity, setOpacity] = useState(false);
   const handleStart = () => {
@@ -27,47 +27,47 @@ const Ball4_list = ({  }) => {
   const handleEnd = () => {
     setOpacity(false);
   };
-  const trackBall4Pos = (data) => {
+  const trackBall1Pos = (data) => {
     setPosition({ x: data.x, y: data.y });
   };
 
-
+  const [BList, setList] = useState([]);  
   const onBallClick = (index) => {
-    console.log("Ball4_List.js: onballclick", index);
-
+    console.log("Ball1_List.js: onballclick", index);
+    //console.log(BList)
   };
 
   const onRemoveClick = useCallback(
     (id) => {
       
       //console.log("넘어온 리시트는",List);
-      console.log("Ball4 doubleclick is ", id,Ball4List);
+      console.log("Ball1 doubleclick is ", id,Ball1List);
       /*const updateList  = List.filter((List) => List.index !== index);
       setList(updateList);*/
-      setBall4List(Ball4List.filter((newball) => newball.id !== id));
+      setBall1List(Ball1List.filter((newball) => newball.id !== id));
       
-
-    },[Ball4List]
+      
+    },[Ball1List]
   );
   return (
     <>
       
-        {Ball4List &&
-          Ball4List.map((item) => (
+        {Ball1List &&
+          Ball1List.map((item) => (
             <Draggable
               key={item.id}
-             
-              onDrag={(e, data) => trackBall4Pos(data)}
+              ref={nextId}
+              onDrag={(e, data) => trackBall1Pos(data)}
               onStart={handleStart}
               onStop={handleEnd}
             >
               <DivBall
                 key={item.id}
-                
+                ref={nextId}
                 onClick={() => onBallClick(item.id)}
                 //className={`div-img-ball${index}`}
                 onDoubleClick={() => onRemoveClick(item.id)}
-                style={{ backgroundImage: `url(${ball4})` }}
+                style={{ backgroundImage: `url(${ball1})` }}
               ></DivBall>
             </Draggable>
           ))}
@@ -76,4 +76,4 @@ const Ball4_list = ({  }) => {
   );
 };
 
-export default Ball4_list;
+export default Ball1_list;

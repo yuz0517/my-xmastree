@@ -1,10 +1,10 @@
 import { useContext, useState, useRef, useCallback } from "react";
-import ball2 from "../../assets/image/xball2.png";
+import ball2 from "../../../assets/image/xball2.png";
 import React from "react";
-import { DivTreeSection } from "../Tree";
+import { DivTreeSection } from "../../Tree";
 import styled from "styled-components";
 import Draggable from "react-draggable";
-import { Context } from "../Contextprovider";
+import { Context } from "../../Contextprovider";
 
 const DivBall = styled.div`
 

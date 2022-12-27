@@ -1,10 +1,10 @@
 import React, { useContext, useState, useRef, useCallback } from "react";
-import ball4 from "../../assets/image/xball4.png";
+import ball5 from "../../../assets/image/xball5.png";
 import styled from "styled-components";
 
 import { IoIosAddCircle } from 'react-icons/io';
-import { DivTreeSection } from "../Tree";
-import { Context } from '../Contextprovider';
+import { DivTreeSection } from "../../Tree";
+import { Context } from '../../Contextprovider';
 const DivBall = styled.div`
   left: 50%;
   transform: translate(-50%, 0);
@@ -29,7 +29,7 @@ const DivDeco = styled.div`
   border: 1px solid blue;
   
 `;
-const Ball4 = () => {
+const Ball5 = () => {
   const ref = React.createRef();
   //Draggable 관련 변수, 함수들
   const nodeRef = useRef(null);
@@ -41,22 +41,22 @@ const Ball4 = () => {
   const handleEnd = () => {
     setOpacity(false);
   };
-  const trackBall4Pos = (data) => {
+  const trackBall5Pos = (data) => {
     setPosition({ x: data.x, y: data.y });
   };
   
   const nextId = useRef(0);
-  const { Ball4List, setBall4List } = useContext(Context);
-  //console.log("Ball4.js",nextId.current)
+  const { Ball5List, setBall5List } = useContext(Context);
+  //console.log("Ball5.js",nextId.current)
   const onAddClick = useCallback(() => {
     console.log(nextId.current);
     const newball = {
       id: nextId.current,
     };
     console.log("create ", newball.id)
-    setBall4List(Ball4List.concat(newball));
+    setBall5List(Ball5List.concat(newball));
     nextId.current += 1;
-  },[Ball4List]
+  },[Ball5List]
 
   );
  
@@ -64,7 +64,7 @@ const Ball4 = () => {
   return (
     <div>
       <DivDeco>
-        <DivExampleBall style={{ backgroundImage: `url(${ball4})` }}></DivExampleBall>
+        <DivExampleBall style={{ backgroundImage: `url(${ball5})` }}></DivExampleBall>
 
         <button className='AddButton' onClick={onAddClick}>
             <IoIosAddCircle/>
@@ -75,4 +75,4 @@ const Ball4 = () => {
   );
 }
 
-export default Ball4;
+export default Ball5;

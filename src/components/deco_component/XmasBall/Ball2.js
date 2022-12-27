@@ -1,10 +1,12 @@
 import React, { useContext, useState, useRef, useCallback } from "react";
-import ball3 from "../../assets/image/xball3.png";
+import ball2 from "../../../assets/image/xball2.png";
 import styled from "styled-components";
+import Draggable from "react-draggable";
 
+import './Ball2.css';
 import { IoIosAddCircle } from 'react-icons/io';
-import { DivTreeSection } from "../Tree";
-import { Context } from '../Contextprovider';
+import { DivTreeSection } from "../../Tree";
+import { Context } from '../../Contextprovider';
 const DivBall = styled.div`
   left: 50%;
   transform: translate(-50%, 0);
@@ -29,7 +31,7 @@ const DivDeco = styled.div`
   border: 1px solid blue;
   
 `;
-const Ball3 = () => {
+const Ball2 = ({ List, getList}) => {
   const ref = React.createRef();
   //Draggable 관련 변수, 함수들
   const nodeRef = useRef(null);
@@ -41,22 +43,22 @@ const Ball3 = () => {
   const handleEnd = () => {
     setOpacity(false);
   };
-  const trackBall3Pos = (data) => {
+  const trackBall2Pos = (data) => {
     setPosition({ x: data.x, y: data.y });
   };
   
   const nextId = useRef(0);
-  const { Ball3List, setBall3List } = useContext(Context);
-  //console.log("Ball3.js",nextId.current)
+  const { Ball2List, setBall2List } = useContext(Context);
+  //console.log("Ball2.js",nextId.current)
   const onAddClick = useCallback(() => {
     console.log(nextId.current);
     const newball = {
       id: nextId.current,
     };
     console.log("create ", newball.id)
-    setBall3List(Ball3List.concat(newball));
+    setBall2List(Ball2List.concat(newball));
     nextId.current += 1;
-  },[Ball3List]
+  },[Ball2List]
 
   );
  
@@ -64,7 +66,7 @@ const Ball3 = () => {
   return (
     <div>
       <DivDeco>
-        <DivExampleBall style={{ backgroundImage: `url(${ball3})` }}></DivExampleBall>
+        <DivExampleBall style={{ backgroundImage: `url(${ball2})` }}></DivExampleBall>
 
         <button className='AddButton' onClick={onAddClick}>
             <IoIosAddCircle/>
@@ -75,4 +77,4 @@ const Ball3 = () => {
   );
 }
 
-export default Ball3;
+export default Ball2;

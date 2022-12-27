@@ -16,10 +16,11 @@ import { BiQuestionMark } from "react-icons/bi";
 import styled from "styled-components";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
-import Ball1_list from "./deco_component/Ball1_list";
-import Ball2_list from "./deco_component/Ball2_list";
-import Ball3_list from "./deco_component/Ball3_list";
-import Ball4_list from "./deco_component/Ball4_list";
+import Ball1_list from "./deco_component/XmasBall/Ball1_list";
+import Ball2_list from "./deco_component/XmasBall/Ball2_list";
+import Ball3_list from "./deco_component/XmasBall/Ball3_list";
+import Ball4_list from "./deco_component/XmasBall/Ball4_list";
+import Ball5_List from "./deco_component/XmasBall/Ball5_list";
 import Candy1_list from "./deco_component/Candy1_list";
 const DivTreeSection = styled.div`
   border: 1px solid blue;
@@ -90,7 +91,7 @@ const Tree = () => {
           }}
         />
         <Ball1_list /><Ball2_list /><Ball3_list /><Candy1_list />
-        <Ball4_list />
+        <Ball4_list /><Ball5_List />
       </DivTreeSection>
 
       <div className="div-decoSection">

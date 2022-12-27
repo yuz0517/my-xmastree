@@ -4,10 +4,11 @@ import { SketchPicker } from "react-color";
 
 import Draggable from "react-draggable";
 import YellowNeon from './deco_component/YellowNeon';
-import Ball1 from "./deco_component/Ball1";
-import Ball2 from "./deco_component/Ball2";
-import Ball3 from "./deco_component/Ball3";
-import Ball4 from "./deco_component/Ball4"
+import Ball1 from "./deco_component/XmasBall/Ball1";
+import Ball2 from "./deco_component/XmasBall/Ball2";
+import Ball3 from "./deco_component/XmasBall/Ball3";
+import Ball4 from "./deco_component/XmasBall/Ball4";
+import Ball5 from "./deco_component/XmasBall/Ball5";
 import Candy1 from "./deco_component/Candy1";
 function Deco1() {
 
@@ -18,6 +19,7 @@ function Deco1() {
       <Ball2/>
       <Ball3/>
       <Ball4/>
+      <Ball5/>
       <Candy1/>
       
       

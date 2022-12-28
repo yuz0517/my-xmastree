@@ -11,6 +11,7 @@ import { SketchPicker } from "react-color";
 import "./Tree.css";
 import Deco from "./Deco";
 import Deco1 from "./Deco1";
+import Deco2 from "./Deco2";
 
 import { BiQuestionMark } from "react-icons/bi";
 import styled from "styled-components";
@@ -22,6 +23,7 @@ import Ball3_list from "./deco_component/XmasBall/Ball3_list";
 import Ball4_list from "./deco_component/XmasBall/Ball4_list";
 import Ball5_List from "./deco_component/XmasBall/Ball5_list";
 import Candy1_list from "./deco_component/Candy1_list";
+import Candle1_list from "./deco_component/Others/Candle1_list";
 const DivTreeSection = styled.div`
   border: 1px solid blue;
   margin-top: 80px;
@@ -90,7 +92,7 @@ const Tree = () => {
             display: redneon ? "block" : "none",
           }}
         />
-        <Ball1_list /><Ball2_list /><Ball3_list /><Candy1_list />
+        <Ball1_list /><Ball2_list /><Ball3_list /><Candy1_list /><Candle1_list />
         <Ball4_list /><Ball5_List />
       </DivTreeSection>
 
@@ -105,6 +107,7 @@ const Tree = () => {
           getList={getList}
         />
         <Deco1 />
+        <Deco2 />
       </div>
       <div> <Snowfall/></div>
       <div>

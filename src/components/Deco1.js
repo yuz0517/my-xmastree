@@ -1,9 +1,6 @@
 import React, { useState, useRef } from "react";
-import ball1 from "../img/xball1.png";
-import { SketchPicker } from "react-color";
 
-import Draggable from "react-draggable";
-import YellowNeon from './deco_component/YellowNeon';
+
 import Ball1 from "./deco_component/XmasBall/Ball1";
 import Ball2 from "./deco_component/XmasBall/Ball2";
 import Ball3 from "./deco_component/XmasBall/Ball3";

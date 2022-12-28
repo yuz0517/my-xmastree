@@ -12,6 +12,7 @@ function App() {
   const [Ball4List, setBall4List] = useState([]);
   const [Ball5List, setBall5List] = useState([]);
   const [Candy1List, setCandy1List] = useState([]);
+  const [Candle1List, setCandle1List] = useState([]);
   return (
     <HashRouter > 
       <Context.Provider value={{ Ball1List, setBall1List,
@@ -20,6 +21,7 @@ function App() {
                                  Ball4List, setBall4List, 
                                  Ball5List, setBall5List,
                                  Candy1List, setCandy1List,
+                                 Candle1List, setCandle1List,
                                 }}>
       <Routes>
         <Route path='/' element={<Home />}/>

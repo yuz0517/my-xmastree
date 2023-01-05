@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik+Bubbles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Rubik+Bubbles&display=swap');
+.p-home-type{
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 50px;
+    color: beige;
 
+}
 .div-Home{
     width: 100vw;
     height: 100vh;
@@ -19,10 +26,52 @@
 @keyframes cursor{
     50%{border-color: transparent;}
 }
+
 .text {
+    font-family: 'Roboto Mono', monospace;
     display: table-cell;
     vertical-align: middle;
     border-right: 05em solid white;
     animation: cursor 0.5s ease infinite;
+}
+
+
+/* CSS */
+.button-92 {
+    
+  --c: #fff;
+  /* text color */
+  background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p,100%)/300% no-repeat,
+    #004dff;
+  /* background color */
+  color: #0000;
+  border: none;
+  transform: perspective(500px) rotateY(calc(20deg*var(--_i,-1)));
+  text-shadow: calc(var(--_i,-1)* 0.08em) -.01em 0   var(--c),
+    calc(var(--_i,-1)*-0.08em)  .01em 2px #0004;
+  outline-offset: .1em;
+  transition: 0.3s;
+}
+
+.button-92:hover,
+.button-92:focus-visible {
+  --_p: 0%;
+  --_i: 1;
+}
+
+.button-92:active {
+  text-shadow: none;
+  color: var(--c);
+  box-shadow: inset 0 0 9e9q #0005;
+  transition: 0s;
+}
+
+.button-92 {
+    margin-top: 30px;
+  font-weight: bold;
+  font-size: 2rem;
+
+  cursor: pointer;
+  padding: .1em .3em;
 }
 

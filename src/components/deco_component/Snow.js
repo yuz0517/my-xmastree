@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import { IoIosAddCircle } from "react-icons/io";
-import Redneon_img from "../../assets/image/redneon.png";
+import Snow1_img from "../../assets/image/snow1.png";
 
 
 const DivExampleBall = styled.div`
@@ -17,7 +17,7 @@ width: 40px;
 height: 70px;
 
 `;
-const RedNeon = ({ Redneon, getRedneon }) => {
+const Snow = ({ snow1, getsnow1 }) => {
 
 
   const [visible, setVisible] = useState(false);
@@ -25,9 +25,9 @@ const RedNeon = ({ Redneon, getRedneon }) => {
     const onclicktest = () => {
         console.log(visible)
         setVisible(!visible)
-        //Redneon = visible; 
+        //Snow1 = visible; 
 
-        getRedneon(visible);
+        getsnow1(visible);
        
       };
     
@@ -35,7 +35,7 @@ const RedNeon = ({ Redneon, getRedneon }) => {
     <div>
       <DivDeco>
         <DivExampleBall
-          style={{ backgroundImage: `url(${Redneon_img})` }}
+          style={{ backgroundImage: `url(${Snow1_img})` }}
         ></DivExampleBall>
 
         <button
@@ -46,7 +46,7 @@ const RedNeon = ({ Redneon, getRedneon }) => {
         </button>
       </DivDeco>
       <div
-        className="div-redwneon"
+        
 
       />
       
@@ -54,4 +54,4 @@ const RedNeon = ({ Redneon, getRedneon }) => {
   );
 }
 
-export default RedNeon;
+export default Snow;

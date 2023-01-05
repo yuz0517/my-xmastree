@@ -7,6 +7,7 @@ import Ball3 from "./deco_component/XmasBall/Ball3";
 import Ball4 from "./deco_component/XmasBall/Ball4";
 import Ball5 from "./deco_component/XmasBall/Ball5";
 import Candy1 from "./deco_component/Candy1";
+import Candle1 from "./deco_component/Others/Candle1";
 function Deco1() {
 
 
@@ -18,6 +19,7 @@ function Deco1() {
       <Ball4/>
       <Ball5/>
       <Candy1/>
+      
       
       
     </div>

@@ -1,7 +1,9 @@
 import React, { useState, useRef } from "react";
 import html2canvas from "html2canvas";
-import Snowfall from 'react-snowfall'
+import Snowfall from "react-snowfall";
 import tree from "../img/xmastree.png";
+import flowerneon_img from "../assets/image/flowerneon.png";
+import snow1_img from "../assets/image/snow1.png";
 import yellowneon_img from "../img/yellowneon.png";
 import redneon_img from "../img/redneon.png";
 import ball1 from "../img/xball1.png";
@@ -24,8 +26,9 @@ import Ball4_list from "./deco_component/XmasBall/Ball4_list";
 import Ball5_List from "./deco_component/XmasBall/Ball5_list";
 import Candy1_list from "./deco_component/Candy1_list";
 import Candle1_list from "./deco_component/Others/Candle1_list";
+import camera from "../assets/image/camera.png";
 const DivTreeSection = styled.div`
-  border: 1px solid blue;
+  border: 3px solid skyblue;
   margin-top: 80px;
   margin-bottom: 30px;
   width: 350px;
@@ -61,6 +64,14 @@ const Tree = () => {
   };
 
   //---yellowneon------//
+  const [flowerneon, setflowerneon] = useState(false);
+
+  const getflowerneon = (flowerneon) => {
+    console.log(flowerneon);
+    setflowerneon(flowerneon);
+  };
+
+  //---yellowneon------//
   const [yellowneon, setYellowneon] = useState(false);
 
   const getYellowneon = (yellowneon) => {
@@ -72,6 +83,12 @@ const Tree = () => {
 
   const getRedneon = (Redneon) => {
     setRedneon(Redneon);
+  };
+  //----snow1-----//
+  const [snow1, setsnow1] = useState(false);
+
+  const getsnow1 = (snow1) => {
+    setsnow1(snow1);
   };
   return (
     <div className="div-treepage-full">
@@ -92,31 +109,51 @@ const Tree = () => {
             display: redneon ? "block" : "none",
           }}
         />
-        <Ball1_list /><Ball2_list /><Ball3_list /><Candy1_list /><Candle1_list />
-        <Ball4_list /><Ball5_List />
-      </DivTreeSection>
-
-      <div className="div-decoSection">
-        <Deco
-          yellowneon={yellowneon}
-          getYellowneon={getYellowneon}
-          redneon={redneon}
-          getRedneon={getRedneon}
-          nextId={nextId}
-          List={List}
-          getList={getList}
+        <div
+          className="div-flowerneon"
+          style={{
+            backgroundImage: `url(${flowerneon_img})`,
+            display: flowerneon ? "block" : "none",
+          }}
         />
-        <Deco1 />
-        <Deco2 />
+        <div
+          className="div-snow1"
+          style={{
+            backgroundImage: `url(${snow1_img})`,
+            display: snow1 ? "block" : "none",
+          }}
+        />
+        <Ball1_list />
+        <Ball2_list />
+        <Ball3_list />
+        <Candy1_list />
+        <Ball4_list />
+        <Ball5_List />
+        <Candle1_list />
+      </DivTreeSection>
+      <div className="div-section">
+        <div className="div-decoSection">
+          <Deco2 />
+          <Deco1 />
+          <Deco
+            flowerneon={flowerneon}
+            getflowerneon={getflowerneon}
+            snow1={snow1}
+            getsnow1={getsnow1}
+            yellowneon={yellowneon}
+            getYellowneon={getYellowneon}
+            redneon={redneon}
+            getRedneon={getRedneon}
+            nextId={nextId}
+            List={List}
+            getList={getList}
+          />
+        </div>
       </div>
-      <div> <Snowfall/></div>
-      <div>
-        {/*<SketchPicker
-        color={color}
-        onChangeComplete={(color) => {
-          setColor(color.hex);
-        }}
-      />*/}
+      <div className="div-tooltip">
+      <button onClick={onCaptureClick} className="btn-download">
+          
+          </button>
         <p
           id="tooltip-snowman"
           className="p-snowman"
@@ -125,20 +162,41 @@ const Tree = () => {
           ☃️
         </p>
         <Tooltip anchorId="tooltip-snowman" place="top" />
-      </div>
-      <div>
         <p
           id="tooltip-santa"
           className="p-santa"
+          data-tooltip-html="For Download, Adjust the browser size  to fit the x-mas tree in the square box"
+        >
+          🤶
+        </p>
+        <Tooltip anchorId="tooltip-santa" place="top" />
+
+        <p
+          id="tooltip-snow"
+          className="p-snow"
           data-tooltip-html="Add the decoration and DoubleClick to delete it "
         >
           ❄️
         </p>
-        <Tooltip anchorId="tooltip-santa" place="top" />
+      
+        <Tooltip anchorId="tooltip-snow" place="right" />
+      
+        
+      </div>
+      <div>
+        {" "}
+        <Snowfall />
       </div>
 
+      {/*<SketchPicker
+        color={color}
+        onChangeComplete={(color) => {
+          setColor(color.hex);
+        }}
+      />*/}
+
       <div>
-        <button onClick={onCaptureClick} className="btn-download" />
+        
       </div>
     </div>
   );

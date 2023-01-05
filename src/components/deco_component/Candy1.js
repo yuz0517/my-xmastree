@@ -26,7 +26,7 @@ const DivDeco = styled.div`
   text-align: center;
   width: 40px;
   height: 70px;
-  border: 1px solid blue;
+
   
 `;
 const Candy1 = () => {
@@ -67,7 +67,7 @@ const Candy1 = () => {
         <DivExampleBall style={{ backgroundImage: `url(${candy1})` }}></DivExampleBall>
 
         <button className='AddButton' onClick={onAddClick}>
-            <IoIosAddCircle/>
+            <IoIosAddCircle color="skyblue"/>
         </button>
       </DivDeco>
       

@@ -11,6 +11,32 @@
     
     
 }
+.div-snow1{
+    /*posision fixed 상태에서 가운데정렬 하는 법. */
+    position: fixed;
+ 
+
+    margin-top: 80px;
+    margin-bottom: 30px;
+    height:600px;
+    width: 400px;
+    background-size: 400px;
+    
+    
+}
+.div-flowerneon{
+    /*posision fixed 상태에서 가운데정렬 하는 법. */
+    position: fixed;
+ 
+
+    margin-top: 80px;
+    margin-bottom: 30px;
+    height:600px;
+    width: 400px;
+    background-size: 400px;
+    
+    
+}
 .div-redneon{
     /*posision fixed 상태에서 가운데정렬 하는 법. */
     position: fixed;
@@ -25,6 +51,9 @@
     
 }
 .div-treepage-full{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
     display: flex;
   justify-content: space-between;
 }
@@ -52,35 +81,31 @@
     
 }
 .div-treeSection{
-    border: 1px solid blue;
-    width: 500px;
+    border: 3px solid blue;
+    width: 510px;
     height: 600px;
 }
 .div-decoSection{
-    width: 200px;
-    height: 90px;
-    border: 1px solid blue;
-    overflow: auto;
+    margin-top: 80px;
+    margin-left: 30px;
+    width: auto;
+    height: 500px;
+    border: 3px solid skyblue;
+    
 }
 
 .btn-download{
-    background-color: #f84c97; /* Red */
-    border-radius: 4rem;
-    width: 80px;
-    height: 100px;
-    border: 3px solid #3cff00;
+    background-color: black; /* Red */
+    border: none;
+    width: 120px;
+    height: 90px;
 
-    color: aliceblue;
-    font-size: 0.7rem;
-    margin-right: 30px;
-    margin-top: 20px;
+    background-image: url(../assets/image/camera.png);
+    background-size: cover;
 }
-.btn-download::before{
+.btn-download:active{
     content: "download";
-}
-.btn-download:hover::before{
-    content: "🧑‍🎄❄️☃️🎅 M e r r y X m a s";
-    font-style:italic;
+    background-image: url(../assets/image/944290.gif);
 }
 .img-tr{
     position:  relative;
@@ -90,6 +115,19 @@
 
 }
 
-.p-snowman,.p-santa{
+.p-snowman,.p-snow,.p-santa{
     font-size: 3rem;
+
+}
+.div-section{
+    
+    display: flex;
+}
+.div-tooltip{
+margin-top: 40px;
+    justify-content: center
+    
+    
+    
+
 }

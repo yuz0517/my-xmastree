@@ -14,7 +14,7 @@ function Home() {
     const interval = setInterval(() => {
       setText(addText + TypeText[count]);
       console.log(addText);
-      setCount(count+1);
+      setCount(count + 1);
     }, 200); //0.2초마다 한 글자씩.
     if (count === TypeText.length) {
       clearInterval(interval);
@@ -31,10 +31,12 @@ function Home() {
       <div>
         <Snowfall snowflakeCount={100} />
         <div className="div-home-content">
-          <button className="btn-home-enter" onClick={onclickbutton}>
-            버튼
+          <button className="button-92" onClick={onclickbutton}>
+            click
           </button>
-          <p className="p-home-type"style={{ color: "orange" }}>{addText}</p>
+
+      
+          <p className="p-home-type">{addText}</p>
           <img className="img-home-snowman" src={snowman}></img>
           <img className="img-home-merryxmas" src={merryxmas} width="150"></img>
         </div>

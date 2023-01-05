@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import { IoIosAddCircle } from "react-icons/io";
-import yellowneon from "../../img/yellowneon.png";
+import yellowneon_img from "../../img/yellowneon.png";
 import "./YellowNeon.css";
 
 const DivExampleBall = styled.div`
@@ -15,7 +15,7 @@ margin-top: 10px;
 text-align: center;
 width: 40px;
 height: 70px;
-border: 1px solid blue;
+
 `;
 const YellowNeon = ({ yellowneon, getYellowneon }) => {
 
@@ -32,17 +32,17 @@ const YellowNeon = ({ yellowneon, getYellowneon }) => {
       };
     
   return (
-    <div>
+    <div >
       <DivDeco>
         <DivExampleBall
-          style={{ backgroundImage: `url(${yellowneon})` }}
+          style={{ backgroundImage: `url(${yellowneon_img})` }}
         ></DivExampleBall>
 
         <button
           className="AddButton"
           onClick={onclicktest} 
         >
-          <IoIosAddCircle />
+          <IoIosAddCircle color="skyblue"/>
         </button>
       </DivDeco>
       <div

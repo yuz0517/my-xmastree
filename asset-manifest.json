@@ -1,16 +1,24 @@
 {
   "files": {
-    "main.css": "/my-xmastree/static/css/main.05cff913.css",
-    "main.js": "/my-xmastree/static/js/main.f63e014d.js",
+    "main.css": "/my-xmastree/static/css/main.753013a4.css",
+    "main.js": "/my-xmastree/static/js/main.75adc05b.js",
     "static/js/787.fe49d8ff.chunk.js": "/my-xmastree/static/js/787.fe49d8ff.chunk.js",
+    "static/media/camera.png": "/my-xmastree/static/media/camera.bfe3f24ac1f9e2c6b6b9.png",
     "static/media/xmastree.png": "/my-xmastree/static/media/xmastree.710d9525a7417c18997f.png",
+    "static/media/flowerneon.png": "/my-xmastree/static/media/flowerneon.3618fd46fddad06fd4e7.png",
+    "static/media/snow1.png": "/my-xmastree/static/media/snow1.08cc2f37964c5bdadbd0.png",
+    "static/media/redneon.png": "/my-xmastree/static/media/redneon.6750269c70d6fe3cbb3f.png",
+    "static/media/snowman.png": "/my-xmastree/static/media/snowman.12b08ab6d74410ab164e.png",
+    "static/media/merryxmas.png": "/my-xmastree/static/media/merryxmas.d8beb1cdc9eab1d5173e.png",
+    "static/media/yellowneon.png": "/my-xmastree/static/media/yellowneon.b259652ac290a657f193.png",
+    "static/media/944290.gif": "/my-xmastree/static/media/944290.65754984424057668b92.gif",
     "index.html": "/my-xmastree/index.html",
-    "main.05cff913.css.map": "/my-xmastree/static/css/main.05cff913.css.map",
-    "main.f63e014d.js.map": "/my-xmastree/static/js/main.f63e014d.js.map",
+    "main.753013a4.css.map": "/my-xmastree/static/css/main.753013a4.css.map",
+    "main.75adc05b.js.map": "/my-xmastree/static/js/main.75adc05b.js.map",
     "787.fe49d8ff.chunk.js.map": "/my-xmastree/static/js/787.fe49d8ff.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.05cff913.css",
-    "static/js/main.f63e014d.js"
+    "static/css/main.753013a4.css",
+    "static/js/main.75adc05b.js"
   ]
 }
